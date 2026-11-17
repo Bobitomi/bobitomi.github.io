@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy | Relay Trial</title>
+  <link rel="stylesheet" href="relay.css">
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <a class="brand" href="index.html">Relay Trial</a>
+      <nav aria-label="Information"><a href="index.html">Overview</a> <a href="privacy.html" aria-current="page">Privacy</a> <a href="terms.html">Trial terms</a></nav>
+    </div>
+  </header>
+  <main>
+    <h1>Privacy policy</h1>
+    <p class="lead">Relay Trial uses account and shift information to run a company workspace. Its Gmail connection delivers account emails.</p>
+    <section>
+      <h2>What the Gmail connection can do</h2>
+      <p>The operator grants permission to send email from one Gmail address. The sender requests <code>gmail.send</code>. It can send verification links, invitations, password resets, and operator-requested delivery tests. This permission does not give Relay access to read the inbox or contacts.</p>
+      <p>To deliver a message, Relay sends Google the sender and recipient addresses, subject, and message body. The recipient sees the sender address and any account link intended for them. Google returns a message identifier when it accepts the email.</p>
+    </section>
+    <section>
+      <h2>What Relay keeps</h2>
+      <p>Relay stores sender authorization so it can renew permission and send requested messages. During local setup, Windows encrypts the saved credentials under the operator’s account. Relay records the recipient, subject, delivery status, and relevant timestamps for troubleshooting. It clears queued message content after Google accepts the email. Routine cleanup removes delivery queue records more than 30 days after their expiry.</p>
+      <p>Relay does not use Gmail data for advertising or to train AI models. Its use and transfer of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+    </section>
+    <section>
+      <h2>Workspace records</h2>
+      <p>Your company stores account details, team assignments, shift schedules, and the operational records its crew enters. Access depends on company membership, role, and team assignments. Ask your company leader about access to a record, a correction, deletion, or your company’s backup and retention arrangements.</p>
+    </section>
+    <section>
+      <h2>Disconnecting and requesting deletion</h2>
+      <p>The mailbox owner can remove Relay Trial in <a href="https://myaccount.google.com/connections">Google Account connections</a>. This stops future sends using that authorization. To request deletion of the stored sender credentials or related data, contact the operator at the support address shown on the Google consent screen. Recipients manage copies of messages already in their mailboxes.</p>
+    </section>
+  </main>
+</body>
+</html>
