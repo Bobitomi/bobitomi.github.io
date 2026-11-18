@@ -15,24 +15,38 @@
   </header>
   <main>
     <h1>Privacy policy</h1>
-    <p class="lead">Relay Trial uses account and shift information to run a company workspace. Its Gmail connection delivers account emails.</p>
+    <p class="lead">Relay Trial uses account and shift information to run company workspaces. Its Gmail connection sends account, reminder, and authorized operational emails.</p>
+    <p>Updated 18 November 2026. Relay Trial is operated by Tamas Bobak. Contact <a href="mailto:bobak.tamas95@gmail.com">bobak.tamas95@gmail.com</a> for support or privacy requests.</p>
     <section>
-      <h2>What the Gmail connection can do</h2>
-      <p>The operator grants permission to send email from one Gmail address. The sender requests <code>gmail.send</code>. It can send verification links, invitations, password resets, and operator-requested delivery tests. This permission does not give Relay access to read the inbox or contacts.</p>
-      <p>To deliver a message, Relay sends Google the sender and recipient addresses, subject, and message body. The recipient sees the sender address and any account link intended for them. Google returns a message identifier when it accepts the email.</p>
+      <h2>Gmail access and its purpose</h2>
+      <p>The mailbox owner authorizes one sending address with the <code>gmail.send</code> permission. Relay uses it for account verification, team invitations, password recovery and security notices, configured handover reminders, operational record emails requested by authorized users, and operator-requested delivery checks. Crew members do not need to connect their Gmail accounts.</p>
+      <p>This permission does not let Relay read your Gmail inbox, search existing messages, or access contacts. Relay sends Google the sender and recipient addresses, subject, and message body. Google returns a message identifier and delivery-request results. An account email can contain a private verification, invitation, or password-reset link.</p>
     </section>
     <section>
-      <h2>What Relay keeps</h2>
-      <p>Relay stores sender authorization so it can renew permission and send requested messages. During local setup, Windows encrypts the saved credentials under the operator’s account. Relay records the recipient, subject, delivery status, and relevant timestamps for troubleshooting. It clears queued message content after Google accepts the email. Routine cleanup removes delivery queue records more than 30 days after their expiry.</p>
-      <p>Relay does not use Gmail data for advertising or to train AI models. Its use and transfer of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      <h2>Sharing a record by email</h2>
+      <p>Authorized users choose recipients and preview the subject and content before sending record details, such as incidents, issues, KYC cases, or reports. Internal recipients must meet Relay's account and record-access checks. Company leaders control who may send to outside recipients.</p>
+      <p>KYC emails start with a masked summary; the sender must select full details before previewing if those details are needed. Depending on that choice, an email can contain bank and account information and other case details entered by the crew. Review the preview and recipients carefully. Each recipient receives a separate copy. Forwarding and copies retained by recipients are outside Relay's access controls.</p>
     </section>
     <section>
-      <h2>Workspace records</h2>
-      <p>Your company stores account details, team assignments, shift schedules, and the operational records its crew enters. Access depends on company membership, role, and team assignments. Ask your company leader about access to a record, a correction, deletion, or your company’s backup and retention arrangements.</p>
+      <h2>Storage and protection</h2>
+      <p>Relay stores the sender authorization in private server configuration to renew short-lived access and send permitted messages while the operator is offline. Hosted server settings are not included in the public website or source repository. Saved local setup credentials are encrypted under the operator's Windows account.</p>
+      <p>The hosted application and Gmail API use HTTPS. Pending email bodies are encrypted in Relay's server-side delivery queue with AES-256-GCM. Delivery records include the recipient, subject, status, provider message identifier, and timestamps. The application restricts operational records by company, role, and team access. These controls do not mean that every database field is individually encrypted.</p>
     </section>
     <section>
-      <h2>Disconnecting and requesting deletion</h2>
-      <p>The mailbox owner can remove Relay Trial in <a href="https://myaccount.google.com/connections">Google Account connections</a>. This stops future sends using that authorization. To request deletion of the stored sender credentials or related data, contact the operator at the support address shown on the Google consent screen. Recipients manage copies of messages already in their mailboxes.</p>
+      <h2>Recipients and service providers</h2>
+      <p>Render hosts the application, company records, and delivery queue. Google processes messages sent through Gmail; recipient email providers process and retain the delivered copies. GitHub Pages hosts these public information pages, not the private company database. Operators may access records when necessary to provide support, maintain the service, or handle a verified privacy request.</p>
+      <p>Relay does not sell Google user data or use it for advertising, data brokerage, or training general-purpose AI models. Relay Trial's use and transfer of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+    </section>
+    <section>
+      <h2>Retention and deletion</h2>
+      <p>Sender credentials remain in configuration until the operator removes or replaces them. Revoking access in Google stops further use of that authorization but does not itself erase stored copies. Short-lived access tokens are held in server memory.</p>
+      <p>Queued message content is cleared when dispatch is attempted, or when a message is cancelled, expires, or permanently fails. A confirmed temporary rejection can retain an encrypted copy for a bounded retry. Routine cleanup removes delivery-queue metadata more than 30 days after its expiry. This cleanup does not delete the underlying company record or copies already delivered to a mailbox.</p>
+      <p>Account details, team assignments, shift schedules, chat, operational records, and activity history remain in the workspace until removed through supported features or a company-authorized deletion request. Ask your company leader about its retention and backup arrangements. Backups follow their configured retention schedule, so removal from the active workspace may not immediately remove a backup copy.</p>
+      <p>For deletion of sender credentials or related Google data, contact <a href="mailto:bobak.tamas95@gmail.com">bobak.tamas95@gmail.com</a>. For workspace corrections or deletion, contact your company leader or the same support address. We verify the requester's authority, explain the data and backup scope, and coordinate the deletion. These requests are handled by the operator, not by an automatic Gmail disconnection process.</p>
+    </section>
+    <section>
+      <h2>Disconnecting Gmail</h2>
+      <p>The mailbox owner can remove Relay Trial in <a href="https://myaccount.google.com/connections">Google Account connections</a>. Future emails using that authorization will stop. Contact support to remove the stored authorization and related data. Recipients control messages already in their own mailboxes.</p>
     </section>
   </main>
 </body>
